@@ -11,9 +11,13 @@ function show(cow) {
 // reply to request with "Hello World!"
 app.get('/', function (req, res) {
   var randomCow = Math.floor((Math.random() * all.length) + 1);
-  show(randomCow);
-
-  res.send(show(randomCow));
+  if(req.headers.accept &&
+    req.headers.accept.indexOf("text/html") > -1) {
+    res.send("<pre>"+show(randomCow)+"</pre>");
+  }
+  else {
+    res.send(show(randomCow));
+  }
 });
 
 //start a server on port 80 and log its start to our console

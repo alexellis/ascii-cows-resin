@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/resin-io-projects/simple-server-node#readme",
   "dependencies": {
+    "cows": "^1.1.0",
     "express": "*"
   }
 }
